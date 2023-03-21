@@ -70,12 +70,18 @@
         margin-top: 20px;
     }
 </style>
+
+<h1>{{$event->title}}</h1>
+<p>{{$event->description}}</p>
+<p>{{$event->date}}</p>
+
+
 <div class="title">
     <h1>Anmeldung</h1>
 </div>
 
 
-<form method="POST" action="">
+<form method="POST" action="/">
     @csrf
     <div>
         <label for="answer">Dabei?</label>

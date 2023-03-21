@@ -46,17 +46,17 @@
 
 
 <body>
-<p>Angemeldete Personen:</p>
+<p>Events:</p>
 <ul>
-@foreach($applications as $application)
+@foreach($events as $event)
 
-    <li>{{ $application -> firstname }} {{ $application -> lastname }}</li>
+    <li><a href="/event/{{$event-> id}}">{{ $event -> title }}</a> </li>
 
     @endforeach
 
 </ul>
 
-<small>Anzahl der Personen die nicht kommen: {{$declinedApplications}}</small>
+
 
     
 </body>
