@@ -51,21 +51,13 @@
 </div>
 
 
-<form method="POST" action="">
+<form method="POST" action="/form_create">
+
+@csrf
 
     <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-    </div>
-
-    <div>
-        <label for="first_name">Vorname:</label>
-        <input type="text" id="first_name" name="first_name" required>
+        <label for="date">Datum:</label>
+        <input type="text" id="date" name="date" required>
     </div>
 
     <div>
@@ -74,11 +66,11 @@
     </div>
 
     <div>
-        <label for="info">Beschreibung:</label>
-        <textarea type="text" id="info" name="info" required></textarea>
+        <label for="description">Beschreibung:</label>
+        <textarea type="text" id="description" name="description" required></textarea>
     </div>
 
     <div>
-        <input type="submit" value="Anmelden">
+        <input type="submit" value="Erstellen">
     </div>
 </form>

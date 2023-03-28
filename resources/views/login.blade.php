@@ -52,7 +52,7 @@
 
 
 <form method="POST" action="/login-user">
-@csrf
+    @csrf
     <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
@@ -68,4 +68,12 @@
     <div>
         <input type="submit" value="Anmelden">
     </div>
+    <br>
+    <br>
+    @if(session('fail'))
+    <div class="alert alert-danger">
+        {{ session('fail') }}
+    </div>
+    @endif
+
 </form>

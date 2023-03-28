@@ -26,6 +26,11 @@ Route::get('/form_create', function () {
     return view('form_create');
 });
 
+
+
+Route::post('/form_create', [EventController::class , 'create']);
+
+
 Route::get('/form_application', function () {
     return view('form_application');
 });
