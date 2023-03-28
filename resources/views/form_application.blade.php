@@ -81,26 +81,30 @@
 </div>
 
 
-<form method="POST" action="/">
+<form method="POST" action="/applications/{{$event->id}}">
     @csrf
     <div>
         <label for="answer">Dabei?</label>
         <input name="answer" value="yes" id="answer" type="radio"> Ja
-        <input name="answer" value="No" id="answer" type="radio">Nein
+        <input name="answer" value="no" id="answer" type="radio">Nein
+
     </div>
     <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
+
     </div>
 
     <div>
         <label for="lastname">Name:</label>
         <input type="text" id="lastname" name="lastname" required>
+
     </div>
 
     <div>
         <label for="firstname">Vorname:</label>
         <input type="text" id="firstname" name="firstname" required>
+
     </div>
 
 
@@ -114,5 +118,5 @@
 
 
 <div class="link-container">
-    <a href="/form_application/applications">Anmeldungen anzeigen</a>
+    <a href="/form_application/applications/{{$event->id}}">Anmeldungen anzeigen</a>
 </div>

@@ -11,4 +11,8 @@ class Application extends Model
 
     public $table = 'applications';
 
+    public function event(){
+        return $this->belongsTo(Event::class);
+    }
+
 }
