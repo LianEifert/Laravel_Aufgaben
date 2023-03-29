@@ -34,7 +34,7 @@ class EventController extends Controller
         $event->date = $request->get('date');
         $event->save();
 
-        return redirect('/form_create');
+        return redirect('/');
     }
 
     public function show($id)
