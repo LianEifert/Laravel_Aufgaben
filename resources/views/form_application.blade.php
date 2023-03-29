@@ -45,7 +45,7 @@
         justify-content: center;
     }
 
-    a {
+    .applicate {
         display: inline-block;
         padding: 10px;
         background-color: #4CAF50;
@@ -56,11 +56,11 @@
         transition: background-color 0.2s ease;
     }
 
-    a:hover {
+    .applicate:hover {
         background-color: #3e8e41;
     }
 
-    a:active {
+    .applicate:active {
         background-color: #1e461d;
     }
 
@@ -84,7 +84,9 @@
     }
 </style>
 
-@include('layouts.header')
+@extends('layouts.master')
+@section('title', 'Anmeldung Event')
+@section('content')
 
 
 <div class="container">
@@ -139,5 +141,8 @@
 
 
 <div class="link-container">
-    <a href="/applications/{{$event->id}}">Anmeldungen anzeigen</a>
+    <a href="/applications/{{$event->id}}" class="applicate">Anmeldungen anzeigen</a>
 </div>
+
+
+@endsection

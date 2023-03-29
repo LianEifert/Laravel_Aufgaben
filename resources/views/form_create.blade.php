@@ -47,7 +47,9 @@
 </style>
 
 
-@include('layouts.header')
+@extends('layouts.master')
+@section('title', 'Event erstellen')
+@section('content')
 
 
 
@@ -79,3 +81,5 @@
         <input type="submit" value="Erstellen">
     </div>
 </form>
+
+@endsection

@@ -47,7 +47,9 @@
 </style>
 
 
-@include('layouts.header')
+@extends('layouts.master')
+@section('title', 'Login')
+@section('content')
 
 
 <div class="title">
@@ -81,3 +83,7 @@
     @endif
 
 </form>
+
+
+
+@endsection
