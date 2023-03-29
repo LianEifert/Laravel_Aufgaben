@@ -24,11 +24,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/form_create', function () {
     return view('form_create');
-});
+})->middleware('auth');
 
 
 
-Route::post('/form_create', [EventController::class , 'create']);
+Route::post('/form_create', [EventController::class , 'create'])->middleware('auth');
 
 
 Route::get('/form_application', function () {
@@ -47,10 +47,17 @@ Route::post('applications/{id}', [ApplicationController::class , 'create']);
 Route::get('/event/{id}', [EventController::class, 'show']);
 
 
-Route::get('/login', [LoginController::class, 'login']);
-Route::post('/login-user', [LoginController::class, 'loginUser']);
+Route::get('/login', [LoginController::class, 'view'])->middleware('guest');
 
-Route::get('/form_application/applications/{id}', [ApplicationController::class , 'list']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/applications/{id}', [ApplicationController::class , 'list']);
+
+
+//To create User with hashed password
+Route::get('/add', [LoginController::class, 'add']);
 
 
 

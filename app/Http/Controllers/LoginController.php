@@ -9,26 +9,64 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function login()
+
+
+    public function add()
+    {
+
+        $request = request();
+
+
+        $application = new User();
+        $application->name = "Lian";
+        $application->email = "lian_eifert@sluz.ch";
+        $application->password = Hash::make("1234");
+
+        $application->save();
+
+        return redirect('/');
+    }
+
+
+    public function view()
     {
         return view('login');
     }
 
 
+    public function logout()
+    {
+        Auth::logout();
 
-      public function loginUser(Request $request)
+        return redirect('/');
+
+    }
+
+
+
+      public function login(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        $user = User::where('email', $request->email)->first();
 
-        if ($user && $request->password == $user->password) {
-            return redirect('/');
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            
+            return redirect()->intended('/');
         } else {
+           
             return back()->with('fail', 'Anmeldung fehlgeschlagen');
         }
+
+
+
+      
     }
+
+
+
 }

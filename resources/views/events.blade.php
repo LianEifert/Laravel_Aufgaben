@@ -10,7 +10,6 @@
 
 <style>
     body {
-        max-width: 800px;
         margin: auto;
         padding: 20px;
         background-color: #f5f5f5;
@@ -24,9 +23,13 @@
     }
 
     ul {
+        display: flex;
+        max-width: 800px;
         list-style: none;
         margin: 0;
         padding: 0;
+        flex-direction: column;
+    justify-content: center;
     }
 
     li {
@@ -43,69 +46,14 @@
         font-size: 12px;
         color: #999;
     }
-
-
-    /* Header */
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #333;
-        color: #fff;
-    }
-
-    .header a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .header .login-button {
-        display: none;
-    }
-
-    /* Show login button if user is not logged in */
-    <?php
-
-    use Illuminate\Support\Facades\Auth;
-
-    if (!Auth::check()) : ?>.header .login-button {
-        display: block;
-    }
-
-    <?php endif; ?>
-
-    /* Login button style */
-    .header .login-button a {
-        padding: 5px 10px;
-        border: 1px solid #fff;
-        border-radius: 5px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        transition: all 0.2s ease;
-    }
-
-    .header .login-button a:hover {
-        background-color: #fff;
-        color: #333;
-    }
 </style>
 
 
 <body>
 
-    <div class="header">
-        <a href="/">My Website</a>
-        <div class="login-button">
-            <a href="/login">Login</a>
-        </div>
-    </div>
+    @include('layouts.header')
 
-
+<br>
     <p>Events:</p>
     <ul>
         @foreach($events as $event)
@@ -115,6 +63,9 @@
         @endforeach
 
     </ul>
+
+
+
 
 
 

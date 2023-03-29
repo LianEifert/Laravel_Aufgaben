@@ -46,6 +46,9 @@
 
 
 <body>
+
+@include('layouts.header')
+
 <p>Angemeldete Personen:</p>
 <ul>
 @foreach($applications as $application)

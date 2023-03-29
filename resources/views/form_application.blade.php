@@ -69,11 +69,32 @@
         justify-content: center;
         margin-top: 20px;
     }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .box {
+        background-color: #f5f5f5;
+
+        padding: 20px;
+    }
 </style>
 
-<h1>{{$event->title}}</h1>
-<p>{{$event->description}}</p>
-<p>{{$event->date}}</p>
+@include('layouts.header')
+
+
+<div class="container">
+    <div class="box">
+        <h1>{{$event->title}}</h1>
+        <p>{{$event->description}}</p>
+        <p>{{$event->date}}</p>
+    </div>
+</div>
+
 
 
 <div class="title">
@@ -118,5 +139,5 @@
 
 
 <div class="link-container">
-    <a href="/form_application/applications/{{$event->id}}">Anmeldungen anzeigen</a>
+    <a href="/applications/{{$event->id}}">Anmeldungen anzeigen</a>
 </div>

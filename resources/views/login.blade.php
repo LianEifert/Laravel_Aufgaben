@@ -46,12 +46,16 @@
     }
 </style>
 
+
+@include('layouts.header')
+
+
 <div class="title">
     <h1>Login</h1>
 </div>
 
 
-<form method="POST" action="/login-user">
+<form method="POST" action="/login">
     @csrf
     <div>
         <label for="email">Email:</label>

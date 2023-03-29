@@ -46,6 +46,11 @@
     }
 </style>
 
+
+@include('layouts.header')
+
+
+
 <div class="title">
     <h1>Erstellen</h1>
 </div>

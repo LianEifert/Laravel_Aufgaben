@@ -23,7 +23,7 @@ class EventController extends Controller
             'title' => 'required|max:255',
             'date' => 'required|max:255',
             'description' => 'required|max:255',
-        ], 
+        ],
             
         );
 
@@ -33,7 +33,7 @@ class EventController extends Controller
         $event->date = $request->get('date');
         $event->save();
 
-        return redirect('/create_event');
+        return redirect('/form_create');
     }
 
     public function show($id)
