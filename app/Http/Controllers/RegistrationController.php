@@ -13,20 +13,23 @@ class RegistrationController extends Controller
         $request = request();
 
 
-       
 
-        
-        $request->validate( [
-            'name' => 'required|max:25',
-            'email' => 'required|email',
-            'password' => 'required|max:255|min:5',
-        ],
-            
+
+
+        $request->validate(
+            [
+                'name' => 'required|max:25',
+                'lastname' => 'required|max:25',
+                'email' => 'required|email',
+                'password' => 'required|max:255|min:5',
+            ],
+
         );
 
         $user = new User();
         $passwordUnhashed = $request->get('password');
         $user->name = $request->get('name');
+        $user->lastname = $request->get('lastname');
         $user->email = $request->get('email');
         $user->password = Hash::make($passwordUnhashed);
         $user->save();
@@ -36,6 +39,6 @@ class RegistrationController extends Controller
 
     public function show()
     {
-  return view('register');
+        return view('register');
     }
 }

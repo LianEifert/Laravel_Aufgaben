@@ -29,7 +29,7 @@ Route::get('/form_create', function () {
 
 
 
-Route::post('/form_create', [EventController::class , 'create'])->middleware('auth');
+Route::post('/form_create', [EventController::class, 'create'])->middleware('auth');
 
 
 Route::get('/form_application', function () {
@@ -43,7 +43,7 @@ Route::get('/', [EventController::class, 'list']);
 Route::post('/', [EventController::class, 'list']);
 
 
-Route::post('applications/{id}', [ApplicationController::class , 'create']);
+Route::post('applications/{id}', [ApplicationController::class, 'create']);
 
 Route::get('/event/{id}', [EventController::class, 'show']);
 
@@ -54,19 +54,13 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::get('/applications/{id}', [ApplicationController::class , 'list']);
+Route::get('/applications/{id}', [ApplicationController::class, 'list']);
 
 
 
-Route::get('/register', [RegistrationController::class , 'show']);
+Route::get('/register', [RegistrationController::class, 'show']);
 
-Route::post('/register', [RegistrationController::class , 'create']);
-
-
-
-//To create User with hashed password
-Route::get('/add', [LoginController::class, 'add']);
-
+Route::post('/register', [RegistrationController::class, 'create']);
 
 
 

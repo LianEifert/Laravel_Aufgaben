@@ -22,7 +22,5 @@ class EventFactory extends Factory
             'description' => $this->faker->paragraph,
             'date' => $this->faker->dateTimeThisMonth()->format('d.m.Y'),
         ];
-
-
     }
 }

@@ -59,10 +59,15 @@
 
 <form method="POST" action="/register">
     @csrf
-   
+
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
+    </div>
+
+    <div>
+        <label for="lastname">Vorname:</label>
+        <input type="text" id="lastname" name="lastname" required>
     </div>
 
     <div>
@@ -80,7 +85,7 @@
     <div>
         <input type="submit" value="Registrieren">
     </div>
-    
+
     <br>
     <br>
     @if(session('fail'))

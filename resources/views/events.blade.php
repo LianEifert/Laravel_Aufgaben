@@ -1,10 +1,8 @@
-
-
 <style>
     body {
         margin: auto;
         background-color: #f5f5f5;
-    
+
     }
 
     p {
@@ -21,7 +19,7 @@
         margin: 0;
         padding: 0;
         flex-direction: column;
-    justify-content: center;
+        justify-content: center;
     }
 
     li {
@@ -44,11 +42,11 @@
 
 <body>
 
-@extends('layouts.master')
-@section('title', 'Events')
-@section('content')
+    @extends('layouts.master')
+    @section('title', 'Events')
+    @section('content')
 
-<br>
+    <br>
     <p>Events:</p>
     <ul>
         @foreach($events as $event)
@@ -62,10 +60,3 @@
 
 
     @endsection
-
-
-
-
-
-
-

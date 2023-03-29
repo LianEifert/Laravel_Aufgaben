@@ -1,8 +1,6 @@
-
-
 <style>
     body {
-        
+
         margin: auto;
         padding: 20px;
         background-color: #f5f5f5;
@@ -41,23 +39,23 @@
 
 <body>
 
-@extends('layouts.master')
-@section('title', 'Anmeldungen')
-@section('content')
+    @extends('layouts.master')
+    @section('title', 'Anmeldungen')
+    @section('content')
 
 
-<br>
+    <br>
 
-<p>Angemeldete Personen:</p>
-<ul>
-@foreach($applications as $application)
+    <p>Angemeldete Personen:</p>
+    <ul>
+        @foreach($applications as $application)
 
-    <li>{{ $application -> firstname }} {{ $application -> lastname }}</li>
+        <li>{{ $application -> firstname }} {{ $application -> lastname }}</li>
 
-    @endforeach
+        @endforeach
 
-</ul>
+    </ul>
 
-<small>Anzahl der Personen die nicht kommen: {{$declinedApplications}}</small>
+    <small>Anzahl der Personen die nicht kommen: {{$declinedApplications}}</small>
 
     @endsection

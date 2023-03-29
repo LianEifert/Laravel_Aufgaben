@@ -16,15 +16,16 @@ class EventController extends Controller
         $request = request();
 
 
-       
 
-        
-        $request->validate( [
-            'title' => 'required|max:255',
-            'date' => 'required|max:255',
-            'description' => 'required|max:255',
-        ],
-            
+
+
+        $request->validate(
+            [
+                'title' => 'required|max:255',
+                'date' => 'required|max:255',
+                'description' => 'required|max:255',
+            ],
+
         );
 
         $event = new Event();

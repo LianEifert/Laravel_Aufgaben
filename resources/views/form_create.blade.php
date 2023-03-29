@@ -60,7 +60,7 @@
 
 <form method="POST" action="/form_create">
 
-@csrf
+    @csrf
 
     <div>
         <label for="date">Datum:</label>

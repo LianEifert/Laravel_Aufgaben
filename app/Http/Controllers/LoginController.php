@@ -11,22 +11,6 @@ class LoginController extends Controller
 {
 
 
-    public function add()
-    {
-
-        $request = request();
-
-
-        $application = new User();
-        $application->name = "Lian";
-        $application->email = "lian_eifert@sluz.ch";
-        $application->password = Hash::make("1234");
-
-        $application->save();
-
-        return redirect('/');
-    }
-
 
     public function view()
     {
@@ -39,12 +23,11 @@ class LoginController extends Controller
         Auth::logout();
 
         return redirect('/');
-
     }
 
 
 
-      public function login(Request $request)
+    public function login(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
@@ -55,18 +38,11 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            
+
             return redirect()->intended('/');
         } else {
-           
+
             return back()->with('fail', 'Anmeldung fehlgeschlagen');
         }
-
-
-
-      
     }
-
-
-
 }

@@ -8,14 +8,15 @@ use App\Models\Event;
 
 class ApplicationController extends Controller
 {
-    public function create($id){
+    public function create($id)
+    {
         $request = request();
 
 
-       
 
-        
-        $request->validate( [
+
+
+        $request->validate([
             'email' => 'required|email',
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
@@ -36,10 +37,11 @@ class ApplicationController extends Controller
         $application->event_id = $id;
         $application->save();
 
-        return redirect('/event'. '/' . $id);
+        return redirect('/');
     }
 
-    public function  list($id){
+    public function  list($id)
+    {
 
         $event = Event::findOrFail($id);
 
@@ -47,9 +49,11 @@ class ApplicationController extends Controller
         $declinedApplications = $event->applications->where('answer', 'no')->count();
 
 
-        return view('applications',[
+        return view(
+            'applications',
+            [
                 'id' => $id,
-                'applications'=> $applications,
+                'applications' => $applications,
                 'declinedApplications' => $declinedApplications,
             ]
         );

@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('answer');
             $table->unsignedBigInteger('event_id');
-            
-          
         });
     }
 

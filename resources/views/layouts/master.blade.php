@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 </head>
 
 <style>
-    
     .header {
         display: flex;
         justify-content: space-between;
@@ -93,11 +92,11 @@ use Illuminate\Support\Facades\Auth;
     }
 
 
-    .login-register-container{
+    .login-register-container {
         display: flex;
     }
 
-    .register-button{
+    .register-button {
         padding-left: 10px;
     }
 </style>
@@ -135,7 +134,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-       
+
         @auth
 
 

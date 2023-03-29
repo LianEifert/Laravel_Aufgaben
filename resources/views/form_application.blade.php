@@ -1,3 +1,8 @@
+<?php
+
+use Illuminate\Support\Facades\Auth; ?>
+
+
 <style>
     form {
         max-width: 500px;
@@ -114,19 +119,21 @@
     </div>
     <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required value="<?php if (Auth::check()) : ?> 
+            <?= Auth::user()->email ?> 
+        <?php endif; ?>">
 
     </div>
 
     <div>
         <label for="lastname">Name:</label>
-        <input type="text" id="lastname" name="lastname" required>
+        <input type="text" id="lastname" name="lastname" required value="<?php if (Auth::check()) : ?><?= Auth::user()->name ?><?php endif; ?>">
 
     </div>
 
     <div>
         <label for="firstname">Vorname:</label>
-        <input type="text" id="firstname" name="firstname" required>
+        <input type="text" id="firstname" name="firstname" required value="<?php if (Auth::check()) : ?><?= Auth::user()->lastname ?><?php endif; ?>">
 
     </div>
 
