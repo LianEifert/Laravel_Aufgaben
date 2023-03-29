@@ -3,15 +3,15 @@
 <style>
     body {
         margin: auto;
-        padding: 20px;
         background-color: #f5f5f5;
-        font-family: Arial, sans-serif;
+    
     }
 
     p {
         font-weight: bold;
         font-size: 20px;
         margin-bottom: 10px;
+        padding: 10px;
     }
 
     ul {
@@ -28,6 +28,7 @@
         font-size: 16px;
         line-height: 1.4;
         padding: 10px;
+        margin: 10px;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
