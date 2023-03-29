@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\RegistrationController;
 use App\Models\Application;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
@@ -54,6 +55,13 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/applications/{id}', [ApplicationController::class , 'list']);
+
+
+
+Route::get('/register', [RegistrationController::class , 'show']);
+
+Route::post('/register', [RegistrationController::class , 'create']);
+
 
 
 //To create User with hashed password

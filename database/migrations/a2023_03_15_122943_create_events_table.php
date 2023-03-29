@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('applications', function (Blueprint $table) {
-            $table->timestamps();
+        Schema::create('events', function (Blueprint $table) {
+
             $table->id();
-            $table->string('email');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('answer');
-            $table->unsignedBigInteger('event_id');
-            
-          
+            $table->string('title');
+            $table->text('description');
+            $table->string('date');
+            $table->timestamps();
         });
     }
 
@@ -31,7 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('applications');
+        Schema::dropIfExists('events');
     }
 };
-

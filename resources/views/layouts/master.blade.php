@@ -11,11 +11,10 @@ use Illuminate\Support\Facades\Auth;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('main.css')}}">
 </head>
 
 <style>
-    /* Header */
+    
     .header {
         display: flex;
         justify-content: space-between;
@@ -42,29 +41,22 @@ use Illuminate\Support\Facades\Auth;
         display: none;
     }
 
-    
+
     <?php if (!Auth::check()) : ?>.header .login-button {
         display: block;
     }
 
-    <?php endif; ?>
-
-    <?php if (!Auth::check()) : ?>.header .register-button {
+    <?php endif; ?><?php if (!Auth::check()) : ?>.header .register-button {
         display: block;
     }
 
-    <?php endif; ?>
-
-  
-    <?php if (Auth::check()) : ?>.header .logout-button {
+    <?php endif; ?><?php if (Auth::check()) : ?>.header .logout-button {
         display: block;
     }
 
-    <?php endif; ?>
-
-  
-    .header .login-button a,
+    <?php endif; ?>.header .login-button a,
     .header .logout-button a {
+
         padding: 5px 10px;
         border: 1px solid #fff;
         border-radius: 5px;
@@ -83,6 +75,7 @@ use Illuminate\Support\Facades\Auth;
 
     .header .register-button a,
     .header .register-button a {
+
         padding: 5px 10px;
         border: 1px solid #fff;
         border-radius: 5px;
@@ -98,6 +91,15 @@ use Illuminate\Support\Facades\Auth;
         background-color: #fff;
         color: #333;
     }
+
+
+    .login-register-container{
+        display: flex;
+    }
+
+    .register-button{
+        padding-left: 10px;
+    }
 </style>
 
 <body>
@@ -106,27 +108,46 @@ use Illuminate\Support\Facades\Auth;
 
     <div class="header">
         <a href="/">Mein Eventportal</a>
+
+
+
+        <div class="events">
+            <a href="/">Alle Events</a>
+        </div>
+
         @guest
+
+        <div class="login-register-container">
             <div class="login-button">
                 <a href="/login">Login</a>
             </div>
-      @endguest
-      @guest
+
+
             <div class="register-button">
                 <a href="/register">Register</a>
             </div>
-      @endguest
-      @auth
-            <div class="events">
-                <a href="/">Alle Events</a>
-            </div>
-            @endauth
-     @auth
-            <div class="logout-button">
-                <a href="/logout">Logout</a>
-            </div>
-            @endauth
+        </div>
+
+
+
+
+        @endguest
+
+
+
        
+        @auth
+
+
+        <div class="">
+            <a href="/form_create">Event erstellen</a>
+        </div>
+
+        <div class="logout-button">
+            <a href="/logout">Logout</a>
+        </div>
+        @endauth
+
     </div>
 
     @yield('content')
